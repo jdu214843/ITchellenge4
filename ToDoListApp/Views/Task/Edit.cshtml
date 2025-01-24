@@ -1,0 +1,89 @@
+@model ToDoListApp.Models.ToDoTask
+
+@{
+    ViewData["Title"] = "Edit Task";
+}
+
+<h2 class="text-center">Edit Task</h2>
+
+<form asp-action="Edit" method="post" enctype="multipart/form-data" class="p-4 border rounded" style="max-width: 600px; margin: auto;">
+    <input type="hidden" asp-for="Id" /> <!-- Task ID'ni yashirin kiritish -->
+
+    <!-- Task nomi -->
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <!-- Sana -->
+    <div class="mb-3">
+        <label asp-for="Date" class="form-label"></label>
+        <input asp-for="Date" type="date" class="form-control" />
+        <span asp-validation-for="Date" class="text-danger"></span>
+    </div>
+
+     <!-- Deadline -->
+    <div class="mb-3">
+        <label asp-for="Deadline" class="form-label"></label>
+        <input asp-for="Deadline" type="date" class="form-control" />
+        <span asp-validation-for="Deadline" class="text-danger"></span>
+    </div>
+
+    <!-- Holat (Status) -->
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <div class="d-flex gap-3">
+            <div class="form-check">
+                <input asp-for="Priority" class="form-check-input" type="radio" id="PriorityNew" value="New Task" />
+                <label class="form-check-label text-danger" for="PriorityNew">New Task</label>
+            </div>
+            <div class="form-check">
+                <input asp-for="Priority" class="form-check-input" type="radio" id="PriorityProcess" value="Process" />
+                <label class="form-check-label text-primary" for="PriorityProcess">Process</label>
+            </div>
+            <div class="form-check">
+                <input asp-for="Priority" class="form-check-input" type="radio" id="PriorityCompleted" value="Completed" />
+                <label class="form-check-label text-success" for="PriorityCompleted">Completed</label>
+            </div>
+        </div>
+        <span asp-validation-for="Priority" class="text-danger"></span>
+    </div>
+
+    <!-- Vazifa tavsifi -->
+    <div class="mb-3">
+        <label asp-for="Description" class="form-label"></label>
+        <textarea asp-for="Description" class="form-control" rows="4" placeholder="Start writing here..."></textarea>
+        <span asp-validation-for="Description" class="text-danger"></span>
+    </div>
+
+    <!-- Eski rasm -->
+    @if (!string.IsNullOrEmpty(Model.ImagePath))
+    {
+        <div class="mb-3">
+            <label class="form-label">Current Image</label>
+            <div>
+                <img src="@Model.ImagePath" alt="Current Task Image" class="img-thumbnail" style="max-width: 100%;" />
+            </div>
+        </div>
+    }
+
+    <!-- Yangi rasm yuklash -->
+    <div class="mb-3">
+        <label class="form-label">Change Image (Optional)</label>
+        <input type="file" name="image" class="form-control" />
+    </div>
+
+   
+
+    <!-- Tugmalar -->
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-warning px-5">Update</button>
+        <a asp-action="Index" class="btn btn-secondary px-5">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    <!-- Klient tomonda validatsiya uchun kerak -->
+    <partial name="_ValidationScriptsPartial" />
+}

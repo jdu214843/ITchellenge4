@@ -1,0 +1,26 @@
+@model ToDoListApp.Models.ToDoTask
+
+@{
+    ViewData["Name"] = "Delete Task";
+}
+
+<h1 class="text-danger">Delete Task</h1>
+
+<h3 class="text-warning">Are you sure you want to delete this task?</h3>
+
+<div class="mb-3">
+    <h4 class="text-dark">Task: <span class="fw-bold">@Model.Name</span></h4>
+    <p>Is Completed: <span class="fw-semibold">@Model.IsCompleted</span></p>
+</div>
+
+<form method="post">
+    <fieldset>
+        <input type="hidden" asp-for="Id" />
+        <button type="submit" class="btn btn-danger" aria-label="Confirm delete task">
+            <i class="bi bi-trash"></i> Delete
+        </button>
+        <a asp-action="Index" class="btn btn-secondary" aria-label="Cancel delete task">
+            <i class="bi bi-x-circle"></i> Cancel
+        </a>
+    </fieldset>
+</form>

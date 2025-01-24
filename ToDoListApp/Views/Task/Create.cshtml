@@ -1,0 +1,87 @@
+@model ToDoListApp.Models.ToDoTask
+
+@{
+    ViewData["Title"] = "Create Task";
+}
+
+<h2 class="text-center">Create Task</h2>
+
+<form method="post" enctype="multipart/form-data" class="p-4 border rounded" style="max-width: 600px; margin: auto;">
+    <div class="mb-3">
+        <label for="Name" class="form-label">Title</label>
+        <input type="text" class="form-control" id="name" name="Name" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Date" class="form-label">Start Date</label>
+        <input type="date" class="form-control" id="Date" name="Date" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="Deadline" class="form-label">Deadline</label>
+        <input type="date" class="form-control" id="Deadline" name="Deadline" required />
+    </div>
+
+    <div class="mb-3">
+        <label class="form-label">Status</label>
+        <div class="d-flex gap-3">
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="PriorityExtreme" name="Priority" value="New Task" />
+                <label class="form-check-label text-danger" for="PriorityExtreme">New Task</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="PriorityModerate" name="Priority" value="Process" />
+                <label class="form-check-label text-primary" for="PriorityModerate">Process</label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" id="PriorityLow" name="Priority" value="Completed" />
+                <label class="form-check-label text-success" for="PriorityLow">Completed</label>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label for="Description" class="form-label">Task Description</label>
+        <textarea class="form-control" id="Description" name="Description" rows="4" placeholder="Start writing here..." required></textarea>
+    </div>
+
+    <div class="mb-3">
+        <label for="Image" class="form-label">Upload Image</label>
+        <div class="border p-3 text-center" style="border-radius: 8px; position: relative;">
+            <input type="file" class="form-control" id="Image" name="Image" style="display: none;" accept="image/*" onchange="previewImage(event)" />
+            
+            <!-- Preview Image -->
+            <img id="preview" src="#" alt="Preview Image" style="max-width: 100%; display: none; border-radius: 8px;" />
+
+            <!-- Replace Drag & Drop text dynamically -->
+            <label id="uploadText" for="Image" class="d-block">Drag & Drop files here or</label>
+
+            <button type="button" class="btn btn-outline-secondary mt-2" onclick="document.getElementById('Image').click();">Browse</button>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-warning px-5">Done</button>
+    </div>
+</form>
+
+<script>
+    // JavaScript function for image preview
+    function previewImage(event) {
+        const input = event.target;
+        const preview = document.getElementById("preview");
+        const uploadText = document.getElementById("uploadText"); // Text to replace
+
+        if (input.files && input.files[0]) {
+            const reader = new FileReader();
+
+            reader.onload = function (e) {
+                preview.src = e.target.result; // Set preview image source
+                preview.style.display = "block"; // Show preview image
+                uploadText.style.display = "none"; // Hide "Drag & Drop" text
+            };
+
+            reader.readAsDataURL(input.files[0]); // Read the image file
+        }
+    }
+</script>
