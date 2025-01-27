@@ -1,22 +1,28 @@
-# Build bosqichi uchun SDK image
-FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
+# Image versiyasini tanlash
+FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
 WORKDIR /app
 
-# .csproj faylini qo'shish va restore qilish
-COPY *.csproj ./
+FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+WORKDIR /src
+
+# Loyihaning barcha fayllarini nusxalash
+COPY ["ToDoListApp/ToDoListApp.csproj", "./"]
+
+# Restore jarayonini amalga oshirish
 RUN dotnet restore
 
-# Dastur kodini nusxalash va build qilish
+# Loyihaning qolgan kodlarini nusxalash
 COPY . ./
-RUN dotnet publish -c Release -o out
+WORKDIR "/src/ToDoListApp"
 
-# Run bosqichi uchun runtime image
-FROM mcr.microsoft.com/dotnet/aspnet:8.0
+# Loyihani build qilish
+RUN dotnet build -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish -c Release -o /app/publish
+
+# Final bosqich: ishlashga tayyor bo'lish
+FROM base AS final
 WORKDIR /app
-COPY --from=build /app/out .
-
-# Portni ochish
-EXPOSE 5000
-
-# Dasturni ishga tushirish
-ENTRYPOINT ["dotnet", "ITchallenge4.dll"]
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "ToDoListApp.dll"]
