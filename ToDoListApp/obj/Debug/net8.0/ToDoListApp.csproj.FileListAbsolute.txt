@@ -102,3 +102,4 @@
 /Users/apple/ITchallenge4/ToDoListApp/obj/Debug/net8.0/ToDoListApp.pdb
 /Users/apple/ITchallenge4/ToDoListApp/obj/Debug/net8.0/ToDoListApp.genruntimeconfig.cache
 /Users/apple/ITchallenge4/ToDoListApp/obj/Debug/net8.0/ref/ToDoListApp.dll
+/Users/apple/ITchallenge4/ToDoListApp/obj/Debug/net8.0/ToDoListApp.sourcelink.json
