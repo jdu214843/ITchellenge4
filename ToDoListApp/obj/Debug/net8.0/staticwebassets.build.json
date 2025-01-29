@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "WpyVTgn5pKVnd4JZ3nkBT6nmseR7+7K39BNErT1WiSE=",
+  "Hash": "YK5L0n57ib8cH30Gwu0Kvxvq9NiddbrK/lGH7EUM2/4=",
   "Source": "ToDoListApp",
   "BasePath": "_content/ToDoListApp",
   "Mode": "Default",
@@ -148,6 +148,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/2024-02-21 07.08.49.jpg"
+    },
+    {
+      "Identity": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/images/3885250.png",
+      "SourceId": "ToDoListApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/",
+      "BasePath": "_content/ToDoListApp",
+      "RelativePath": "images/3885250.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/3885250.png"
     },
     {
       "Identity": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/images/480019c8-5fd1-404e-a3e6-e3372e5eab55.jpg",

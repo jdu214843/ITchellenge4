@@ -24,9 +24,21 @@
                         </li>
                     </ul>
                     <ul class="navbar-nav ml-auto">
-                          <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="SignUp" asp-action="Index">Log In</a>
-                        </li>
+                        @if (Context.Session.GetString("Username") != null)
+                        {
+                            <li class="nav-item">
+                                <span class="nav-link text-dark">Welcome, @Context.Session.GetString("Username")!</span>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="Logout">Log Out</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Auth" asp-action="SignIn">Log In</a>
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>

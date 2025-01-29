@@ -1,8 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using System.Security.Cryptography;
 using System.Text;
 using ToDoListApp.Models;
-
+using System.Linq;
 
 public class AuthController : Controller
 {
@@ -17,7 +18,7 @@ public class AuthController : Controller
     [HttpGet("signup")]
     public IActionResult SignUp()
     {
-        return View();  // Sign Up formasi
+        return View();
     }
 
     // Sign Up (POST)
@@ -30,7 +31,6 @@ public class AuthController : Controller
             return View();
         }
 
-        // Password hashing
         using var sha256 = SHA256.Create();
         var passwordHash = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
 
@@ -44,14 +44,14 @@ public class AuthController : Controller
         _context.Users.Add(user);
         _context.SaveChanges();
 
-        return RedirectToAction("SignIn");  // Sign Up muvaffaqiyatli bo'lsa, Sign In sahifasiga yo'naltirish
+        return RedirectToAction("SignIn");
     }
 
     // Sign In (GET)
     [HttpGet("signin")]
     public IActionResult SignIn()
     {
-        return View();  // Sign In formasi
+        return View();
     }
 
     // Sign In (POST)
@@ -66,7 +66,6 @@ public class AuthController : Controller
             return View();
         }
 
-        // Password verification
         using var sha256 = SHA256.Create();
         var passwordHash = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
 
@@ -76,6 +75,16 @@ public class AuthController : Controller
             return View();
         }
 
-        return RedirectToAction("Index", "Task"); // Sign In muvaffaqiyatli bo'lsa, bosh sahifaga yo'naltirish
+        // Session saqlash
+        HttpContext.Session.SetString("Username", user.Username);
+
+        return RedirectToAction("Index", "Task");
+    }
+
+    // Log Out
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("SignIn");
     }
 }
