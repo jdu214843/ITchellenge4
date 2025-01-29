@@ -4,64 +4,62 @@
     ViewData["Title"] = "Create Task";
 }
 
-<h2 class="text-center">Create Task</h2>
+<h2 class="text-center text-primary">Create Task</h2>
 
-<form method="post" enctype="multipart/form-data" class="p-4 border rounded" style="max-width: 600px; margin: auto;">
+<form method="post" enctype="multipart/form-data" class="p-4 border rounded shadow-lg bg-white" style="max-width: 600px; margin: auto;">
     <div class="mb-3">
-        <label for="Name" class="form-label">Title</label>
-        <input type="text" class="form-control" id="name" name="Name" required />
+        <label for="Name" class="form-label fw-bold">Title</label>
+        <input type="text" class="form-control" id="name" name="Name" required placeholder="Enter task title..." />
     </div>
 
     <div class="mb-3">
-        <label for="Date" class="form-label">Start Date</label>
+        <label for="Date" class="form-label fw-bold">Start Date</label>
         <input type="date" class="form-control" id="Date" name="Date" required />
     </div>
 
     <div class="mb-3">
-        <label for="Deadline" class="form-label">Deadline</label>
+        <label for="Deadline" class="form-label fw-bold">Deadline</label>
         <input type="date" class="form-control" id="Deadline" name="Deadline" required />
     </div>
 
     <div class="mb-3">
-        <label class="form-label">Status</label>
+        <label class="form-label fw-bold">Status</label>
         <div class="d-flex gap-3">
             <div class="form-check">
                 <input class="form-check-input" type="radio" id="PriorityExtreme" name="Priority" value="New Task" />
-                <label class="form-check-label text-danger" for="PriorityExtreme">New Task</label>
+                <label class="form-check-label text-danger fw-semibold" for="PriorityExtreme">New Task</label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" id="PriorityModerate" name="Priority" value="Process" />
-                <label class="form-check-label text-primary" for="PriorityModerate">Process</label>
+                <label class="form-check-label text-primary fw-semibold" for="PriorityModerate">Process</label>
             </div>
             <div class="form-check">
                 <input class="form-check-input" type="radio" id="PriorityLow" name="Priority" value="Completed" />
-                <label class="form-check-label text-success" for="PriorityLow">Completed</label>
+                <label class="form-check-label text-success fw-semibold" for="PriorityLow">Completed</label>
             </div>
         </div>
     </div>
 
     <div class="mb-3">
-        <label for="Description" class="form-label">Task Description</label>
+        <label for="Description" class="form-label fw-bold">Task Description</label>
         <textarea class="form-control" id="Description" name="Description" rows="4" placeholder="Start writing here..." required></textarea>
     </div>
 
     <div class="mb-3">
-        <label for="Image" class="form-label">Upload Image</label>
-        <div class="border p-3 text-center" style="border-radius: 8px; position: relative;">
-            <input type="file" class="form-control" id="Image" name="Image" style="display: none;" accept="image/*" onchange="previewImage(event)" />
+        <label for="Image" class="form-label fw-bold">Upload Image</label>
+        <div class="border p-3 text-center bg-light rounded" style="position: relative; cursor: pointer;" onclick="document.getElementById('Image').click();">
+            <input type="file" class="form-control d-none" id="Image" name="Image" accept="image/*" onchange="previewImage(event)" />
             
             <!-- Preview Image -->
-            <img id="preview" src="#" alt="Preview Image" style="max-width: 100%; display: none; border-radius: 8px;" />
+            <img id="preview" src="#" alt="Preview Image" class="img-fluid rounded d-none" style="max-width: 100%;" />
 
-            <!-- Replace Drag & Drop text dynamically -->
-            <label id="uploadText" for="Image" class="d-block">Drag & Drop files here or</label>
-
-            <button type="button" class="btn btn-outline-secondary mt-2" onclick="document.getElementById('Image').click();">Browse</button>
+            <!-- Upload text -->
+            <p id="uploadText" class="text-muted m-0">Drag & Drop files here or click to browse</p>
         </div>
     </div>
 
     <div class="text-center mt-4">
-        <button type="submit" class="btn btn-warning px-5">Done</button>
+        <button type="submit" class="btn btn-warning px-5 fw-bold shadow">Done</button>
     </div>
 </form>
 
@@ -70,18 +68,18 @@
     function previewImage(event) {
         const input = event.target;
         const preview = document.getElementById("preview");
-        const uploadText = document.getElementById("uploadText"); // Text to replace
+        const uploadText = document.getElementById("uploadText");
 
         if (input.files && input.files[0]) {
             const reader = new FileReader();
 
             reader.onload = function (e) {
-                preview.src = e.target.result; // Set preview image source
-                preview.style.display = "block"; // Show preview image
-                uploadText.style.display = "none"; // Hide "Drag & Drop" text
+                preview.src = e.target.result;
+                preview.classList.remove("d-none");
+                uploadText.classList.add("d-none");
             };
 
-            reader.readAsDataURL(input.files[0]); // Read the image file
+            reader.readAsDataURL(input.files[0]);
         }
     }
 </script>
