@@ -1,28 +1,19 @@
-# Image versiyasini tanlash
-FROM mcr.microsoft.com/dotnet/aspnet:7.0 AS base
+# Use .NET 8 SDK image for building the app
+FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /app
 
-FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
-WORKDIR /src
-
-# Loyihaning barcha fayllarini nusxalash
-COPY ["ToDoListApp/ToDoListApp.csproj", "./"]
-
-# Restore jarayonini amalga oshirish
-RUN dotnet restore
-
-# Loyihaning qolgan kodlarini nusxalash
+# Copy and restore dependencies
 COPY . ./
-WORKDIR "/src/ToDoListApp"
+RUN dotnet restore
+RUN dotnet publish -c Release -o /out
 
-# Loyihani build qilish
-RUN dotnet build -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish -c Release -o /app/publish
-
-# Final bosqich: ishlashga tayyor bo'lish
-FROM base AS final
+# Use .NET 8 runtime image for running the app
+FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
-COPY --from=publish /app/publish .
+COPY --from=build /out .
+
+# Expose the port your app runs on (default: 80)
+EXPOSE 80
+
+# Start the app
 ENTRYPOINT ["dotnet", "ToDoListApp.dll"]

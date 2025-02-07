@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "YK5L0n57ib8cH30Gwu0Kvxvq9NiddbrK/lGH7EUM2/4=",
+  "Hash": "FXIJQSA9bF+pII1f9Hq8vruoPTpRsoGPykvMPLb2+Qo=",
   "Source": "ToDoListApp",
   "BasePath": "_content/ToDoListApp",
   "Mode": "Default",
@@ -471,6 +471,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/information-technology-minimalist-blue-xk9z8h5bore5jky6.jpg"
+    },
+    {
+      "Identity": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/images/jlptn4_grammar_yoteida.jpg",
+      "SourceId": "ToDoListApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/",
+      "BasePath": "_content/ToDoListApp",
+      "RelativePath": "images/jlptn4_grammar_yoteida.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/jlptn4_grammar_yoteida.jpg"
     },
     {
       "Identity": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/images/kanji_ichi_stroke_order.gif",

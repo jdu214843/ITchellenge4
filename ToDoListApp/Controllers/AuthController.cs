@@ -70,7 +70,7 @@ public class AuthController : Controller
         var passwordHash = Convert.ToBase64String(sha256.ComputeHash(Encoding.UTF8.GetBytes(password)));
 
         if (user.PasswordHash != passwordHash)
-        {
+        {  
             ModelState.AddModelError("", "Invalid username or password.");
             return View();
         }
