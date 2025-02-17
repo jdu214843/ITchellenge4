@@ -12,7 +12,7 @@
             background-color: #f8f9fa;
         }
         .container {
-            max-width: 1000px;
+
             background: white;
             padding: 20px;
             border-radius: 10px;
@@ -26,6 +26,9 @@
         }
         .btn-custom:hover {
             transform: scale(1.05);
+        }
+        .username{
+            text-transform: uppercase;
         }
     </style>
 </head>
@@ -45,13 +48,14 @@
                     <th>Image</th>
                     <th>Status</th>
                     <th>Actions</th>
+                    <th>Username</th>
                 </tr>
             </thead>
             <tbody>
                 @if (!Model.Any())
                 {
                     <tr>
-                        <td colspan="7" class="text-center text-muted">No tasks found. Click "Add New Task" to create one!</td>
+                        <td colspan="8" class="text-center text-muted">No tasks found. Click "Add New Task" to create one!</td>
                     </tr>
                 }
                 else
@@ -85,6 +89,7 @@
                                 <a href="@Url.Action("Edit", "Task", new { id = task.Id })" class="btn btn-warning btn-sm btn-custom">✏️ Edit</a>
                                 <a href="@Url.Action("Delete", "Task", new { id = task.Id })" class="btn btn-danger btn-sm btn-custom">🗑️ Delete</a>
                             </td>
+                            <td class="username">@Context.Session.GetString("Username")</td>
                         </tr>
                     }
                 }

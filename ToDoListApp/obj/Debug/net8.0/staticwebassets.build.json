@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "FXIJQSA9bF+pII1f9Hq8vruoPTpRsoGPykvMPLb2+Qo=",
+  "Hash": "QoKgWF5PotZ07v3ZuW9yAd9jPwdrpp+w1AWzt9fiGUc=",
   "Source": "ToDoListApp",
   "BasePath": "_content/ToDoListApp",
   "Mode": "Default",
@@ -262,6 +262,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/blue-futuristic-waves-background-with-computer-code-technology_53876-119584.jpg"
+    },
+    {
+      "Identity": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/images/chapter24.pdf",
+      "SourceId": "ToDoListApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/",
+      "BasePath": "_content/ToDoListApp",
+      "RelativePath": "images/chapter24.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/chapter24.pdf"
     },
     {
       "Identity": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/images/conscr.jpg",
@@ -737,25 +756,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/wallpapersden.com_demon-slayer-akaza-character_1920x1080.jpg"
-    },
-    {
-      "Identity": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/images/chapter24.pdf",
-      "SourceId": "ToDoListApp",
-      "SourceType": "Discovered",
-      "ContentRoot": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/",
-      "BasePath": "_content/ToDoListApp",
-      "RelativePath": "images/chapter24.pdf",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot/images/chapter24.pdf"
     },
     {
       "Identity": "/Users/apple/ITchallenge4/ToDoListApp/wwwroot/js/site.js",

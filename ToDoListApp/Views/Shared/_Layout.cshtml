@@ -27,7 +27,7 @@
                         @if (Context.Session.GetString("Username") != null)
                         {
                             <li class="nav-item">
-                                <span class="nav-link text-dark">Welcome, @Context.Session.GetString("Username")!</span>
+                                <span class="nav-link text-dark">@Context.Session.GetString("Username")</span>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-controller="Auth" asp-action="Logout">Log Out</a>
