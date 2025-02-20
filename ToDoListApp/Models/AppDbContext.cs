@@ -10,3 +10,4 @@ public class AppDbContext : DbContext
     {
     }
 }
+

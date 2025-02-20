@@ -65,12 +65,20 @@
       "PackagePath": "staticwebassets/images/chapter24.pdf"
     },
     {
+      "Id": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/conjugation-of-verbs2.jpg",
+      "PackagePath": "staticwebassets/images/conjugation-of-verbs2.jpg"
+    },
+    {
       "Id": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/conscr.jpg",
       "PackagePath": "staticwebassets/images/conscr.jpg"
     },
     {
       "Id": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/f490a2fd771967793b2d71844a38c13d.jpg",
       "PackagePath": "staticwebassets/images/f490a2fd771967793b2d71844a38c13d.jpg"
+    },
+    {
+      "Id": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/fel1.jpg",
+      "PackagePath": "staticwebassets/images/fel1.jpg"
     },
     {
       "Id": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/google-lens.jpg",

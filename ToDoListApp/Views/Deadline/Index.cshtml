@@ -1,0 +1,31 @@
+@model List<ToDoListApp.ViewModels.DeadlineViewModel>
+
+@{
+    ViewData["Title"] = "Deadline Eslatmalari";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-danger">📌 Deadline yaqinlashmoqda!</h2>
+    
+    @if (Model.Any())
+    {
+        <div class="row mt-4">
+            @foreach (var task in Model)
+            {
+                <div class="col-md-6">
+                    <div class="alert alert-warning shadow-lg rounded p-3">
+                        <h5 class="text-dark" style="text-transform: uppercase;">⚠️ @task.TaskTitle</h5>
+                        <p class="text-muted mb-0">@task.Message</p>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success text-center mt-4">
+            <h4>✅ Hozircha deadline yaqinlashayotgan vazifalar yo'q!</h4>
+        </div>
+    }
+</div>
+

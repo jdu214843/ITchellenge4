@@ -1,8 +1,12 @@
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
-using Microsoft.EntityFrameworkCore.Sqlite;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure; // Agar MySQL ulanishidan foydalanmoqchi bo'lsangiz
+using ToDoListApp.Models;
+ // AppDbContext joylashgan joy
+// using Microsoft.EntityFrameworkCore.Sqlite; // Kerak bo'lsa
+
 var builder = WebApplication.CreateBuilder(args);
 
+// Konfiguratsiya qo'shish
 builder.Services.AddControllersWithViews();
 builder.Services.AddSession(options =>
 {
@@ -11,15 +15,19 @@ builder.Services.AddSession(options =>
     options.Cookie.IsEssential = true;
 });
 
-// **MySQL ulanishi uchun to‘g‘ri kod**
-// builder.Services.AddDbContext<AppDbContext>(options =>
-//     options.UseMySql(
-//         builder.Configuration.GetConnectionString("DefaultConnection"),
-//         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
- builder.Services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlite(builder.Configuration.GetConnectionString("SqlLiteConnection")));
+// Agar MySQL ulanishidan foydalanmoqchi bo'lsangiz, quyidagicha:
+//// builder.Services.AddDbContext<AppDbContext>(options =>
+////     options.UseMySql(
+////         builder.Configuration.GetConnectionString("DefaultConnection"),
+////         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))));
+
+// SQLite ulanishi uchun
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlite(builder.Configuration.GetConnectionString("SqlLiteConnection")));
+
 var app = builder.Build();
 
+// Muhitga qarab xatoliklar sahifasi va xavfsizlik sozlamalari
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");

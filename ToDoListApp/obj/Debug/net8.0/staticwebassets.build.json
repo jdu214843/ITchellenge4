@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7LicQNgrYPFZ2UhjQbFAj6GB5P9HJxhyCpmGT9QvMTs=",
+  "Hash": "JyX2Z8UBajj3IPCdXxy030lIyeoxOzmLdxAe3QTEZHc=",
   "Source": "ToDoListApp",
   "BasePath": "_content/ToDoListApp",
   "Mode": "Default",
@@ -283,6 +283,25 @@
       "OriginalItemSpec": "wwwroot/images/chapter24.pdf"
     },
     {
+      "Identity": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/conjugation-of-verbs2.jpg",
+      "SourceId": "ToDoListApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/",
+      "BasePath": "_content/ToDoListApp",
+      "RelativePath": "images/conjugation-of-verbs2.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/conjugation-of-verbs2.jpg"
+    },
+    {
       "Identity": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/conscr.jpg",
       "SourceId": "ToDoListApp",
       "SourceType": "Discovered",
@@ -319,6 +338,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/images/f490a2fd771967793b2d71844a38c13d.jpg"
+    },
+    {
+      "Identity": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/fel1.jpg",
+      "SourceId": "ToDoListApp",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/",
+      "BasePath": "_content/ToDoListApp",
+      "RelativePath": "images/fel1.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/images/fel1.jpg"
     },
     {
       "Identity": "/Users/apple/ITchellenge4_1/ToDoListApp/wwwroot/images/google-lens.jpg",
