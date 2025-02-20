@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/apple/ITchallenge4/ToDoListApp/ToDoListApp.csproj": {}
+    "/Users/apple/ITchellenge4_1/ToDoListApp/ToDoListApp.csproj": {}
   },
   "projects": {
-    "/Users/apple/ITchallenge4/ToDoListApp/ToDoListApp.csproj": {
+    "/Users/apple/ITchellenge4_1/ToDoListApp/ToDoListApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/apple/ITchallenge4/ToDoListApp/ToDoListApp.csproj",
+        "projectUniqueName": "/Users/apple/ITchellenge4_1/ToDoListApp/ToDoListApp.csproj",
         "projectName": "ToDoListApp",
-        "projectPath": "/Users/apple/ITchallenge4/ToDoListApp/ToDoListApp.csproj",
+        "projectPath": "/Users/apple/ITchellenge4_1/ToDoListApp/ToDoListApp.csproj",
         "packagesPath": "/Users/apple/.nuget/packages/",
-        "outputPath": "/Users/apple/ITchallenge4/ToDoListApp/obj/",
+        "outputPath": "/Users/apple/ITchellenge4_1/ToDoListApp/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/Users/apple/.nuget/NuGet/NuGet.Config"
