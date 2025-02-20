@@ -32,7 +32,7 @@ namespace ToDoListApp.Controllers
             var viewModel = tasks.Select(t => new DeadlineViewModel
             {
                 TaskTitle = t.Name,
-                Message = $"{t.Title} vazifasi deadline yaqinlashmoqda!"
+                Message = $"{t.Name} vazifasi deadline yaqinlashmoqda!"
             }).ToList();
 
             return View(viewModel);
